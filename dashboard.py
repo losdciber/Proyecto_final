@@ -1,5 +1,5 @@
 def cargar_datos():
-    url = "https://github.com/WuCandice/Superstore-Sales-Analysis/blob/65d5997da060141a282982bb03ddcf4629431a40/dataset/Superstore%20Dataset.csv
+    url = "https://raw.githubusercontent.com/WuCandice/Superstore-Sales-Analysis/refs/heads/main/dataset/Superstore%20Dataset.csv
     data = pd. read_csv(ur1, encoding='latin1')
     data[ 'Order Date'] = pd. to_datetime(data] 'Order Date'])
     return data
@@ -33,3 +33,6 @@ whith col3:
     st.metric(label="Odenes Totales", value=f"${ordenes_totales:,.2f}")
 whith col4:
     st.metric(label="Clientes Totales", value=f"${clientes_totales:,.2f}")
+
+st.header("ventas y utilidades a lo largo del tiempo")
+ventas_por_utilidad = df_filtrado.set_index('Order Date').resample('M').agg({'Sales': 'sum', 'Profit': 'sum'})
