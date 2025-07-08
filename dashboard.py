@@ -19,14 +19,14 @@ df_filtrado = df[(df['Order Date'].between(pd.fecha_inicial, pd.fecha_final))]
 st.title("Dashboard de Ventas de Superstore")
 st.markdown('##')
 
-ventas_total = df['Sales'].sum()
+ventas_totales = df['Sales'].sum()
 utilidad_total = df['Profit'].sum()
 ordenes_totales = df['order ID'].nunique()
 clientes_totales = df['Customer ID'].nunique()
 
 col1, col2, col3, col4 =st.columns(4)
 whith col1:
-    st.metric(label="Ventas Totales", value=f"${ventas_total:,.2f}")
+    st.metric(label="Ventas Totales", value=f"${ventas_totales:,.2f}")
 whith col2:
     st.metric(label="Utilidad Total", value=f"${utilidad_total:,.2f}")
 whith col3:
