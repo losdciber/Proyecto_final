@@ -10,6 +10,7 @@ min_date = df['Order Date].min()
 max_date = f}df['Order Date'].max()
 fecha_inicial, fecha_final = st.sidebar.date_input(
     "Selecciona un rango de fechas ",
+    value=[min_date, max_date]
     min_value=min_date
     max_value=max_date
 )
@@ -26,3 +27,9 @@ clientes_totales = df['Customer ID'].nunique()
 col1, col2, col3, col4 =st.columns(4)
 whith col1:
     st.metric(label="Ventas Totales", value=f"${ventas_total:,.2f}")
+whith col2:
+    st.metric(label="Utilidad Total", value=f"${utilidad_total:,.2f}")
+whith col3:
+    st.metric(label="Odenes Totales", value=f"${ordenes_totales:,.2f}")
+whith col4:
+    st.metric(label="Clientes Totales", value=f"${clientes_totales:,.2f}")
