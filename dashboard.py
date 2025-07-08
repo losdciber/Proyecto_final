@@ -36,3 +36,25 @@ whith col4:
 
 st.header("ventas y utilidades a lo largo del tiempo")
 ventas_por_utilidad = df_filtrado.set_index('Order Date').resample('M').agg({'Sales': 'sum', 'Profit': 'sum'})
+
+fig_area = px.area(
+    ventas_por_utilidad,
+    x='order_date',
+    y=['Sales','Profit'],
+    title=("Evolucion de ventas y utilidasdes en el tiempo"
+    )
+
+st.ploty_chart(fig_area, use_container_width=True)
+
+st.markdown('---')
+colpie, coldona =st.columns(2)
+
+with colpie:
+    ventas_by_region=df_filtrado.groupby('Region')['Sales'].sum().reset_index()
+    fig_pie_region,
+    names='Region',
+    values='Sales',
+    title='Ventas por Region',
+)
+
+st.plotly_chart(fig_pie_region, use_container_width=True)   
