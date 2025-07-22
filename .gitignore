@@ -1,2 +1,24 @@
-/.env
-.ENV
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite database
+# Ignora todos los .db EXCEPTO el archivo que queremos subir
+*.db
+!data/analisis_energetico.db
+
+# Environment variables and secrets
+.env
+
+# OS and Editor specific
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Virtual environments
+venv/
+ENV/
+env/
