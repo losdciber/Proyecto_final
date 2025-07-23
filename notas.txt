@@ -7,3 +7,4 @@ pip install -r requirements.txt
 .\iniciar_app.bat
 streamlit run app.py
 
+#carlos
